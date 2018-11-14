@@ -1,8 +1,8 @@
 \input texinfo   @c -*- mode: texinfo -*-
 
 @c FILE    OCaml.twjr
-@c VERSION 0.0.4
-@c DATE    2018-11-14T01:30
+@c VERSION 0.0.5
+@c DATE    2018-11-14T002:30
 @c AUTHOR  wlharvey4
 
 @c *****************************************************************************
@@ -1700,6 +1700,94 @@ functions that in their definition call themselves.
 @cindex week 2
 @cindex basic data structures
 @cindex data structures, basic
+@cindex flat data structures
+@cindex data structures, flat
+
+@heading About
+This week and the  next one, we will learn how to structure  code and data with
+types. Types are not only useful  to document programs using type abbreviations
+(sequence 0) but also to inform the  compiler about the shape of values so that
+it can statically check that they are  properly used. This week will be devoted
+to flat data like tuples (sequence 1), records (sequence 2) or arrays (sequence
+3). A toy typed database will be implemented during sequence 4.
+
+@subheading Greetings (Video)
+Greetings from OCamlPro.
+
+
+@c .....................................
+
+@node User-defined Types
+@subsection User-defined Types
+@cindex user-defined types
+@cindex types, user-defined
+
+@heading About
+Types   are   useful  to   document   a   program   because  they   attach   an
+application-specific meaning  to a set  of values.  A type abbreviation  is the
+simplest  way  to  introduce  types  in  programs  by  binding  a  user-defined
+identifier  to a  type. In  this sequence,  we will  learn the  syntax of  type
+definitions and how to write type annotations.
+
+
+@c .....................................
+
+@node Tuples
+@subsection Tuples
+@cindex tuples
+@cindex aggregate type, tuple
+
+@heading About
+The simplest way to  aggregate several values is to join them  in a tuple. This
+sequence introduces the syntax for constructing and observing tuples.
+
+
+@c .....................................
+
+@node Records
+@subsection Records
+@cindex records
+@cindex record types
+@cindex types, record
+@cindex aggregate type, records
+@cindex values, record
+@cindex declare record types
+@cindex observer record types
+
+@heading About
+In  a  tuple, each  component  is  referred using  its  position.  This may  be
+error-prone. Record  types allow each  component to  be named. This  makes code
+more  readable   because  field  names   have  more  meaning   than  positional
+reference. In this sequence, we will  discover how to declare record types, how
+to construct record values and how to observe them.
+
+
+@c .....................................
+
+@node Arrays
+@subsection Arrays
+@cindex arrays
+
+@heading About
+In many  situations, the number  of components of  a composite value  cannot be
+determined  at  compile-time.   Arrays  are  data  structures   which  size  is
+dynamically computed. This sequence will present the type for arrays as well as
+the  syntax to  define array  values and  to observe  their components  through
+indices.
+
+
+@c .....................................
+
+@node Case study --- A small typed database
+@subsection Case study: A small typed database
+@cindex case study
+@cindex database, typed
+
+@heading About
+This sequence  is a case  study showing how tuples,  records and arrays  can be
+used to implement a toy typed  database. The limits of this implementation will
+illustrate the  need for more structured  values. Next week is  about algebraic
+datatypes which are an elegant remedy against these limitations.
 
 
 
@@ -1712,6 +1800,119 @@ functions that in their definition call themselves.
 @cindex week 4
 @cindex advanced data structures
 @cindex data structures, advanced
+@cindex algebraic data types
+@cindex data types, algebraic
+@cindex tags
+@cindex recursive data structures
+@cindex data structures, recursive
+@cindex lists
+@cindex hierarchical data structures
+@cindex data structures, hierarchical
+@cindex parameterized type definitions
+@cindex type definitions, parameterized
+@cindex type system, advanced features
+
+@heading About
+This week, we  will continue our tour  of the OCaml type system.  Last week, we
+only defined flat data structures which  are nice to aggregate values but quite
+limited when  you try  to structure values.  Algebraic datatypes  offer several
+mechanisms to attach  more informative static description of  values using tags
+(sequence 0), to define recursive data structures like lists (sequence 1) or to
+structure values in a hierarchical way (sequence 2). During sequence 3, we will
+discover how programming  is type-directed in OCaml  through the implementation
+of a story generator. Type definition can  be made more generic in OCaml thanks
+to parameterized type definitions (sequence 4). The final sequence will present
+some advanced features of the type system (sequence 5).
+
+
+@c .....................................
+
+@node Tagged values
+@subsection Tagged values
+@cindex tagged values
+
+@heading About
+In  this sequence,  we will  focus  on list,  an ubiquitous  data structure  in
+functional programming. First, we  will see how the type for  lists simply is a
+recursive algebraic datatype. Second, the builtin types for list is presented.
+
+
+@c .....................................
+
+@node Recursive types
+@subsection Recursive types
+@cindex recursive types
+@cindex types, recursive
+@cindex lists
+@cindex recursive algebraic datatype
+@cindex algebraic datatype, recursive
+
+@heading About
+In  this sequence,  we will  focus  on list,  an ubiquitous  data structure  in
+functional programming. First, we  will see how the type for  lists simply is a
+recursive algebraic datatype. Second, the builtin types for list is presented.
+
+
+@c .....................................
+
+@node Tree-like values
+@subsection Tree-like values
+@cindex tree-like values
+@cindex data structures, tree-like
+@cindex hierarchical data structure
+@cindex recursive algebraic datatype
+@cindex algebraic datatype, recursive
+
+@heading About
+In this sequence, we go further  on the topic of recursive datatypes. Tree-like
+datastructures are also omnipresent in  computer science because they allow for
+a  hierarchical   organization  of   data.  Defining  a   type  for   trees  is
+straightforward  in  OCaml  using  a  recursive  algebraic  datatype.  We  will
+refactorize  our  typed  database  example  by replacing  arrays  with  such  a
+tree-like representation.
+
+
+@c .....................................
+
+@node Case Study --- A Story Teller
+@subsection Case Study: A Story Teller
+@cindex case study
+@cindex story teller
+@cindex story generator
+@cindex type-directed programming
+
+@heading About
+This sequence is a case study about  the implementation of a story generator. A
+story is a typical hierarchical information  (it is composed of event which are
+themselves characterized by other values). We will show how the typechecker and
+type definitions can guide programming.
+
+
+@c .....................................
+
+@node Polymorphic algebraic datatypes
+@subsection Polymorphic algebraic datatypes
+@cindex polymorphic algebraic datatypes
+@cindex algebraic datatypes, polymorphic
+
+@heading About
+We already  saw that  the type  for list is  parameterized by  the type  of the
+elements of  the list. This  polymorphic algebraic datatype is  very convenient
+because it improves code reuse: the module List is written once and for all and
+provides functions over  lists of any element type. In  this sequence, you will
+learn the syntax to define your own parameterized types.
+
+
+@c .....................................
+
+@node Advanced Topics
+@subsection Advanced Topics
+@cindex advanced topics
+@cindex algebraic datatypes, advanced
+
+@heading About
+In this sequence,  we will learn some advanced mechanisms  related to algebraic
+datatypes.
 
 
 
@@ -1724,6 +1925,87 @@ functions that in their definition call themselves.
 @cindex week 4
 @cindex higher order functions
 @cindex functions, higher order
+
+@heading About
+During  this fifth  week  we will  discuss  functions in  OCaml  in their  full
+generality.  We will  see that  functions  are in  fact first  class values  in
+functional  programming  languages, and  we  will  learn  how to  write  useful
+functions on the structured data types that have been introduced in Weeks 2 and
+3.
+
+
+@c .....................................
+
+@node Functional Expressions
+@subsection Functional Expressions
+@cindex functional expressions
+
+@heading About
+In this  sequence we explain  how to  write expressions that  denote functional
+values. These correspond  to the so-called lambda-expressions  which also exist
+in other programming languages like Python or Java.
+
+
+@c .....................................
+
+@node Functions as First-Class Values
+@subsection Functions as First-Class Values
+@cindex functions as first-class values
+@cindex functional programming
+
+@heading About
+This  sequence explains  a  distinguishing feature  of Functional  Programming:
+Functions are First-Class Values,  that is they can be used in  the same way as
+any other value.
+
+
+@c .....................................
+
+@node Functions with Multiple Arguments
+@subsection Functions with Multiple Arguments
+@cindex functions with multiple arguments
+
+@heading About
+In this  sequence we explain that  functions in OCaml are  in reality functions
+with one argument  only, and that functions with several  arguments are just an
+abbreviation for nested functions with one argument only.
+
+
+@c .....................................
+
+@node Partial Function Application
+@subsection Partial Function Application
+@cindex partial application
+@cindex partial function application
+
+@heading About
+This sequence explores a  consequence of what we have learned  in Sequence 2: a
+function  with several  arguments  may  be applied  to  some  of its  arguments
+only.  We  show at  hand  of  an example  how  to  put this  so-called  Partial
+Application into use.
+
+
+@c .....................................
+
+@node Mapping Functions on Lists
+@subsection Mapping Functions on Lists
+@cindex mapping functions on lists
+@cindex map
+
+@heading About
+This sequence introduces the function Map  which allows you to transform a list
+by applying the same function to all elements of the list.
+
+
+@c .....................................
+
+@node Folding Functions on Lists
+@subsection Folding Functions on Lists
+@cindex folding functions on lists
+
+@heading About
+This sequence introduces  two different folding functions on  lists. Both allow
+us to combine the elements of a list using a binary operator.
 
 
 
@@ -1739,6 +2021,92 @@ functions that in their definition call themselves.
 @cindex io
 @cindex imperative constructs
 
+@heading About
+Exploring the imperative features offered by the OCaml language.
+
+
+@c .....................................
+
+@node Imperative features in OCaml
+@subsection Imperative features in OCaml
+@cindex imperative features
+
+@heading About
+In this sequence, we remark that  sometimes imperative features are useful, and
+dress a list of the ones we see this week.
+
+
+@c .....................................
+
+@node Getting and handling your Exceptions
+@subsection Getting and handling your Exceptions
+@cindex exceptions
+
+@heading About
+Exceptions  are useful  to alter  the  flow of  control, capture  all kinds  of
+errors, and handling  them.  In this sequence, we meet  the exception mechanism
+offered by OCaml, and learn to use it at our advantage.
+
+
+@c .....................................
+
+@node Getting Information In And Out
+@subsection Getting Information In And Out
+@cindex input/output
+
+@heading About
+Reading from  the input and  writing to the output  can be performed  easily by
+using some other very useful imperative features.
+
+
+@c .....................................
+
+@node Sequences and iterations
+@subsection Sequences and iterations
+@cindex sequences and iterations
+
+@heading About
+Once we have imperative constructs at  hand, executing them one after the other
+is a must. We  learn here the special syntax we have at  hand in OCaml for this
+task.
+
+
+@c .....................................
+
+@node Mutable arrays
+@subsection Mutable arrays
+@cindex Mutable arrays
+
+@heading About
+Now we meet  data structures that are  modifiable in place. We  will start from
+the arrays, as we  find out that thay can actually be  modified, like arrays in
+most other programming languages.
+
+
+@c .....................................
+
+@node Mutable record fields
+@subsection Mutable record fields
+@cindex mutable record fields
+
+@heading About
+In  OCaml, it  is possible  to have  a fine  control on  which part  of a  data
+structure  can  be modified  in  place,  in  the  imperative style,  and  which
+cannot. Time to meet the mutable record fields!
+
+
+@c .....................................
+
+@node Variables, aka References
+@subsection Variables, aka References
+@cindex variables, aka references
+@cindex references
+
+@heading About
+Variables? You  want variables? Yes,  you can have  them! One can  simulate the
+usual  imperative variables  by using  identifiers  and a  record with  mutable
+fields.
+
 
 
 
@@ -1749,7 +2117,91 @@ functions that in their definition call themselves.
 @section Modules And Data Abstraction
 @cindex week 6
 @cindex modules
+@cindex module system
 @cindex data abstraction, modules
+@cindex type abstraction
+@cindex interfaces
+@cindex functors
+@cindex compilation process
+
+@heading About
+This last installment of the course is about programming-in-the-large using the
+module system of OCaml. When a piece  of software reaches a level of complexity
+that  requires several  programmers  to develop  together,  new mechanisms  are
+needed  to  structure programming.  Module  implementations  must be  organized
+hierarchically and  hidden behind  interfaces (sequence 0).  Information hiding
+must be enforced  by the type abstraction  (sequence 1). A case  study will put
+these mechanisms at work through the  developement of a module for dictionaries
+(sequence 2). Functors  are a powerful mechanism to a  parameterize module with
+respect to a family of modules  described by a signature (sequence 3). Finally,
+the final sequence will present the  compilation process of OCaml and the tools
+that  ease the  creation of  software made  of compiled  modules and  libraries
+(sequence 4).
+
+
+@c .....................................
+
+@node Structuring software with modules
+@subsection Structuring software with modules
+@cindex modules
+
+@heading About
+Value  and type  definitions  can be  regrouped  into modules.  A  module is  a
+software component which has an internal consistency and provides some services
+through  an interface.  OCaml takes  modules  seriously: not  only it  provides
+syntax to  define module  implementations and  interfaces, but  the typechecker
+statically checks  that that modules  are properly  used. In this  sequence, we
+present the syntax of module implementations and interfaces.
+
+
+@c .....................................
+
+@node Information hiding
+@subsection Information hiding
+@cindex information hiding
+@cindex interface
+@cindex type abstraction
+
+@heading About
+The purpose  of an interface  is to publish  the minimal amount  of definitions
+needed to use a  module. Hiding everything that is not  necessary to the module
+client is very important to  reduce the interdependencies between modules. Type
+abstraction is a powerful mechanism to enforce information hiding.
+
+
+@c .....................................
+
+@node Case Study --- A Module For Dictionaries
+@subsection Case study: A module for dictionaries
+@cindex case study dictionaries
+
+@heading About
+In this sequence, we discuss the design of a module for dictionaries.
+
+
+@c .....................................
+
+@node Functors
+@subsection Functors
+@cindex functors
+
+@heading About
+Functors are functions from modules to modules.  In other words, a functor is a
+module  parameterized by  another  module.  In this  sequence,  the syntax  for
+functors is explained.
+
+
+@c .....................................
+
+@node Modules as compilation units
+@subsection Modules as compilation units
+@cindex compilation units
+@cindex compilation tools
+
+@heading About
+In  this  final  sequence,  we  present the  compilation  tools  of  the  OCaml
+ecosystem.
+
 
 
 
@@ -1761,8 +2213,201 @@ functions that in their definition call themselves.
 @section Week 7: Project
 @cindex project
 
+@heading About
+This last chapter presents the practical  programming project that is worth 40%
+of the final grade.
+
+You can choose between two options.
+
+@cindex Solver for Klotski, project
+@cindex project, Solver for Klotski
+@enumerate
+@item
+The first,  @emph{A Solver for Klotski},  will have you write  a generic solver
+for puzzle  games, and then  instanciate it to solve  the game of  Klotski. You
+will be rewarded with  an animation of your solution!  It  should be noted that
+this project uses vocabulary and concepts that make it more suited for computer
+science students.
+
+@cindex random text generation, project
+@cindex project, random text generation
+@item
+In the  second, @emph{Random Text  Generation}, you  will write a  program that
+uses a Markov chain  approach (yes, the same Markov chains as  in TV series) to
+generate random  sentences that  reuse parts  of an input  text (or  even mixes
+parts of several ones). You will be rewarded with lots of funny sentences! This
+project is a bit easier and has less prerequisites.
+
+@end enumerate
+
+So have  a look at both  texts and choose the  one you prefer! You  can also do
+both, but it won't give you extra points.
 
 
+@c .....................................
+
+@node A Solver For Klotski
+@subsection A Solver For Klotski
+@cindex A Solver For Klotski
+
+@heading About
+Klotski  is  a  sliding block  puzzle,  that  has  a  fairly detailed  page  on
+WikiPedia. The purpose of this project is to write a solver for Klotski using a
+graph exploration algorithm.
+
+@subheading The Problem
+The  Klotski puzzle  is  made of  a  board  of 4x5  places  which contains  the
+following 10 pieces:
+
+@itemize
+@item
+one 2x2 square piece (written @code{S})
+
+@item
+one 2x1 horizontal rectangle piece (written @code{H})
+
+@item
+four 1x2 vertical rectangle pieces (written @code{V0}, @code{V1}, @code{V2} and
+@code{V3})
+
+@item
+four 1x1 square pieces (written @code{C0}, @code{C1}, @code{C2}, @code{C3}).
+@end itemize
+
+@subheading Initial Configuration
+The  puzzle is  presented in  the initial  configuration that  is shown  in the
+following picture:
+
+@subheading A Move
+A move  in this puzzle consists  in sliding a piece  at a time, and  to win you
+must have managed to  move the large square piece all the  way down, reaching a
+configuration that matches the following shape pattern:
+
+@subheading How To Solve
+To  solve  the puzzle,  one  may  search all  its  state  space for  a  winning
+configuration. The  state space  of the  Klotski puzzle can  be described  as a
+graph,  having as  nodes the  configurations of  the board,  and as  arrows the
+possible moves.
+
+@subheading Excerpt
+In the  following picture, we  show an excerpt  of the Klotski  graph, starting
+from  the initial  configuration. All  the  boards reachable  from the  initial
+configuration in one step  are shown, as well as a few  of the boards reachable
+in two steps.
+
+@subheading Avoiding Repetitions
+Since all  moves can be undone,  it is easy to  see that one can  move from any
+configuration of the graph to any  other configuration of the graph. This means
+that,  when exploring  the  graph, one  will naturally  pass  through the  same
+configuration more than once, following  different paths. To avoid spending our
+time running in  circles when searching for  a solution, we will  need to avoid
+visiting a configuration more than once!
+
+@heading Approach
+To solve the Klotski puzzle, you will proceed in two steps:
+
+@enumerate A
+@item
+As a first step,  you will write a generic solver for  any problem whose search
+space can be represented by a graph,  and making sure you handle properly loops
+in the graph.
+
+@item
+As a second step, you will describe the Klotski puzzle search space as a graph.
+
+@end enumerate
+
+Once the two steps above are done, finding  a solution will just be a matter of
+passing the Klotski graph to the generic solver.
+
+@cartouche
+@b{Note}: this project may take quite a lot of time to be graded, because it is
+long,  and because  the algorithm  is  complex.  We  suggest that  you use  the
+typecheck button and the toplevel extensively, so that you are reasonnably sure
+of your  code before  submitting it  to the  tests. Also,  we added  a function
+grade_only :  int list -> unit,  that you may call  in your code to  select the
+exercises to grade. All other exercises  won't be graded at all, and considered
+failed. For instance, if you write grade_only [ 3 ] ;; at the beginning of your
+file, only exercise 3 will be tested.
+@end cartouche
+
+
+@c .....................................
+
+@node Random Text Generation
+@subsection Random Text Generation
+@cindex project, random text genration
+
+@heading About
+The goal  of this  project is  to synthesize  natural language  sentences using
+information extracted from an existing text corpus.
+
+For this, given a text corpus as  input, we will first compute the frequency of
+all  sequences of  two  words in  the  original  text; then  we  will use  this
+information to produce new sentences by randomly collating these sequences with
+the same frequencies.
+
+@cindex Markov chain
+This method is known under the term of @dfn{Markov chain}. From the input text,
+we compute a  transition table that associates  to each word the  list of words
+that may appear after it, with their relative frequencies.
+
+@subheading Example
+For instance, if we examine ”I am a man and my dog is a good dog and a good dog
+makes  a good  man”, delimiting  it  with ”START”  and ”STOP”  to identify  the
+beginning and end of  the sentence, we end up with the  transition table on the
+right.
+
+This table can then  be used to generate new text that  ressembles the input in
+the following way: starting from the "START" word, choose one of the words that
+may appear  after it, with the  probability found in  the table, add it  to the
+output, then iterate the process until the "STOP" word is found. Below are some
+example sentences produced using this table.
+
+@verbatim
+START I am a good  man STOP ; START I am a good dog  is a good dog and
+my dog and my  dog is a man and my  dog and a man STOP ;  START I am a
+good dog is a man and my dog makes a good man STOP ; START I am a good
+dog makes a good dog is a good dog  and a good dog makes a good dog is
+a man STOP ; START I am a good dog and a man and a good dog and a good
+man and a good dog is a good dog  is a good man and a man STOP ; START
+I am a good dog and a good dog and my dog is a man STOP ; START I am a
+man STOP ;  START I am a good dog  is a good dog is a  good dog and my
+dog is a man STOP ; START I am a good man STOP ; START I am a good dog
+makes a good dog and a good dog is a good dog is a good man and my dog
+is a good dog and  my dog and a good man and a good  dog is a good man
+STOP ; START I am a man and my dog and my dog is a good dog and a good
+dog makes a man STOP
+@end verbatim
+
+@heading The Project
+This project is decomposed in three parts.
+
+@enumerate A
+@item
+First, we will build  a quick prototype, that goes from an  input sentence to a
+randomly generated sentences via a distribution table as the ones above.
+
+@item
+Then we will use  better data structures to enhance the  performance so that we
+can use larger texts, such as small books, as input.
+
+@item
+After that, we will enhance the quality  of input and output, by analysing in a
+smarter way  the input text corpus,  and by considering sequences  of more than
+two words.
+@end enumerate
+
+@cartouche
+Note: this project may  take more time to be graded, because  it is longer than
+simple exercises, and because it is tested on large inputs. We suggest that you
+use  the  typecheck button  and  the  toplevel  extensively,  so that  you  are
+reasonnably sure of your code before submitting it to the tests. Also, we added
+a function  grade_only : int list  -> unit, that you  may call in your  code to
+select the exercises to grade. All other  exercises won't be graded at all, and
+considered  failed. For  instance, if  you write  grade_only [  3 ]  ;; at  the
+beginning of your file, only exercise 3 will be tested.
+@end cartouche
 
 
 @c END CHAPTER OcamlMOOC
