@@ -136,7 +136,10 @@ $(FILE).info : $(FILE).texi
 	@printf "${GREEN}done${CLEAR}\n"
 openinfo : INFO
 	@printf "${YELLOW}Opening INFO in Emacs...${CLEAR}\n"
-	@emacsclient -s server --eval '(info "($(ROOT)/$(FILE).info)top")'
+	@emacsclient -s server --eval \
+	    '(progn \
+	        (info "$(ROOT)/$(FILE).info") \
+	        (revert-buffer t t))'
 	@printf "${GREEN}done${CLEAR}\n"
 
 

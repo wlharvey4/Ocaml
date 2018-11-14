@@ -1,8 +1,8 @@
 \input texinfo   @c -*- mode: texinfo -*-
 
 @c FILE    OCaml.twjr
-@c VERSION 0.0.3
-@c DATE    2018-11-13T22:00
+@c VERSION 0.0.4
+@c DATE    2018-11-14T01:30
 @c AUTHOR  wlharvey4
 
 @c *****************************************************************************
@@ -1159,6 +1159,616 @@ checksums.
 @c /////////////////////////////////////////////////////////////////////////////
 
 
+
+
+
+
+@c *****************************************************************************
+@c                          CHAPTER: OcamlMOOC
+
+@node OcamlMOOC
+@chapter OcamlMOOC
+@cindex ocamlmooc
+
+@heading Introduction to Functional Programming in OCaml
+
+@cindex functional programming paradigm
+Functional programming  is a programming  paradigm which is  rapidly attracting
+interest  from  a  broad  range  of  developers  because  it  allows  to  write
+expressive, concise and elegant programs.
+
+In this MOOC you will learn  Functional programming using the OCaml programming
+language.You will  discover the powerful  mechanisms that are offered  to build
+and manipulate  complex data structures in  a clean and efficient  way. And you
+will see how functions  play a central role, as first-class  values that can be
+freely used in any place where an expression can appear.
+
+@cindex Robin Milner
+@cindex ML
+The OCaml programming language is a  member of the ML language family pioneered
+by  Robin Milner.  An important  feature  of OCaml  is that  it reconciles  the
+conciseness and flexibility of untyped  programming languages (like Python, for
+example) with  the safety of  strongly typed programming languages  (like Java,
+for example).  The OCaml compiler performs  in fact a type  inference. Types of
+identifiers do not have to be declared  but are inferred by the compiler at the
+moment  of  definition of  an  identifier,  and  then  used for  assuring  type
+correctness when using an identifier.
+
+@cindex multi-paradigm language
+We will  start by using OCaml  as a purely functional  programming language. At
+the  end of  this MOOC  we will  see  that OCaml  is in  fact a  multi-paradigm
+language which allows you to combine  the functional programming style with the
+imperative programming paradigm.
+
+
+
+
+@c -----------------------------------------------------------------------------
+@c                          SECTION: About
+
+@node Outline of the Course
+@section Outline of the Course
+
+@heading Weeks and Sequences
+@itemize
+
+@item
+an introduction to functional programming
+
+@item
+using the state-of-the-art OCaml programming language
+
+@item
+exploiting an exercise environment right  in your browser using ground-breaking
+technology based on OCaml itself
+
+@item
+seven weeks
+
+@enumerate 0
+@item
+ Introduction and overview
+
+@enumerate
+
+@item
+sequence 1 Functional Programming: history and motivation
+
+@item
+sequence 2 The OCaml language: history and key features
+
+@item
+sequence 3 Why the OCaml language: meet the users
+
+@item
+sequence 4 Tools and development environment: first steps in OCaml!
+
+@item
+sequence 5 A brief showcase of some of OCaml’s features
+
+@item
+sequence 6 Overview of the available resources
+
+@end enumerate
+
+
+@item
+ Basic types, definitions and functions
+
+@item
+ Basic data structures
+
+@item
+ More advanced data structures
+
+@item
+ Higher order functions
+
+@item
+ Exceptions, input/output and imperative constructs
+
+@item
+ Modules and data abstraction
+@end enumerate
+
+
+@item
+one hour of course per week in several short video sequences
+
+@item
+numerous exercices, checked for you right in your browser
+
+@item
+optional additional material  to learn more about OCaml’s  advanced, real life,
+industrial applications
+
+@item
+a final full-fledged programming exercise
+@end itemize
+
+@heading Learning Objectives
+@itemize
+
+@item
+learn to program using the functional style
+
+@item
+know the basics of OCaml’s advanced type-system
+
+@item
+discover the  power of the  concise manipulation  of user defined  complex data
+
+@item
+structuresstart to explore OCaml’s rich and powerful features
+
+@item
+discover OCaml’s dynamic and growing ecosystem
+@end itemize
+
+
+
+
+@c -----------------------------------------------------------------------------
+
+@node News Updates
+@section News Updates
+@cindex news
+
+
+@c .....................................
+
+@node SEPTEMBER 17 2018
+@subsection SEPTEMBER 17, 2018
+
+We  are  happy  to welcome  you  to  this  MOOC  on functional  programming  in
+OCaml. This is the  third session of the course, that was  first run in October
+2015, and has been improved taking into account the feedback we received.
+
+This  starting week  is composed  of  two chapters,  named  week 0  and week  1
+respectively,  and is  a kind  of  a warm  up.  Take your  time to  familiarize
+yourself  with the  FUN platform,  the  grading environment,  and the  internal
+forum. For instance, what about introducing yourself, your motivations, or your
+expectations in the Coffee room section of the internal forum ?
+
+In the  first chapter, namely "Introduction  and overview", you will  find some
+history and motivation behind Functional Programming, and learn about the OCaml
+ecosystem in general. But, let's start this  MOOC with a greetings video by our
+guest Xavier Leroy!
+
+In the  first chapter, namely "Introduction  and overview", you will  find some
+history and motivation behind Functional Programming, and learn about the OCaml
+ecosystem in  general. This  MOOC starts  with a greetings  video by  our guest
+Xavier Leroy, the creator of the OCaml language!
+
+In the first part  of the second chapter, you will learn how  to use OCaml as a
+(very  rigorous and  expressive)  calculator, writing  simple expressions  over
+basic data types. For this part, you  will be able to test your knowledge using
+quizzes. There  is a lot of  quizzes but only half  of them count in  the final
+grade; so don't be  afraid and do not let them drive you  crazy! You might also
+skip them  and come back  later. Their purpose is  mostly to let  you challenge
+your  knowledge   of  various   corner  cases---well   lets  say   oddities  or
+originalities---in the  OCaml syntax  than to blame  mistakes: for  each graded
+quizz, you  have three  attempts and  some hints are  provided after  the first
+attempt.
+
+Then, in the second part, you will learn how to write your first functions. You
+will be able to test your  knowledge using actual programming exercises, in the
+integrated grading  environment. Patience, this  will be much less  boring than
+the quizzes!
+
+In this second part,  there is also a video from  Kathleen and Arthur Breitman,
+the creators  of Tezos, one of  the most innovative blockchain.  You will learn
+why they decide to make the infrastructure of Tezos crucially depends on OCaml.
+
+All programming  exercises count into the  final grade (except, each  week, the
+exercise with  the lowest grade)  but there is no  limitation in the  number of
+submissions. You have until  the end of the course to  submit your answers, and
+you can observe your progression in the Progress tab.
+
+And, as our guest star Xavier Leroy says, have fun!
+
+
+@c .....................................
+
+@node SEPTEMBER 24 2018
+@subsection SEPTEMBER 24, 2018
+
+Hello and welcome to the second week of this course.
+
+Last week, you  learned how to write simple expressions  over basic data types,
+and  how  to  write  simple  and even  recursive  functions.  We  continue  our
+exploration  of the  OCaml  programming  language :  you  will manipulate  data
+structures built using  those previously introduced basic data  types, but also
+learn to define and  use your own types so they best fit  the problems you want
+to solve with functional programming.
+
+With data types that can contain one or  more basic values, you will be able to
+solve small puzzles in the exercises, and finally to implement a small database
+that leverages the type safety of OCaml.
+
+This week too, we have a welcome video message. This time, it is from OCamlPro,
+the guys who did most of the technical support for this MOOC!
+
+Have fun!
+
+
+@c .....................................
+
+@node OCTOBER 01 2018
+@subsection OCTOBER 01, 2018
+
+At this point in the course, you should  be able to use data structures such as
+tuples, records, or arrays to solve  small problems. The final exercise of last
+week, about a  typed database, is a  good test to actually use  all you learned
+since the beginning of this course.
+
+This week, you will learn more about  defining your own datatypes, and use them
+in conjunction with recursion. This will enable you to write programs that take
+full advantage of  the combination of these  two features, which is  one of the
+bigger strength of functional programming.
+
+Enjoy this new week's content and get ready for a new set of exercises!
+
+
+@c .....................................
+
+@node OCTOBER 08 2018
+@subsection OCTOBER 08, 2018
+
+This week  we are  going to  explore what can  be done  when one  starts taking
+seriously the  possibility of functions  as first  class citizens, that  can be
+passed as arguments, or computed  as results. Higher order functions (functions
+that can take  functions as arguments, and  return them as results)  are at the
+core of  functional programming: they  provide an  elegant and powerful  way of
+solving and thinking  about problems. They allow to define  computations on the
+data structures  we have seen  last weeks  by reasoning about  those structures
+instead of defining concrete steps that change the state of the data.
+
+
+@c .....................................
+
+@node OCTOBER 15 2018
+@subsection OCTOBER 15, 2018
+
+Until now, we've mainly used OCaml  to perform "pure" computations, that do not
+have  side  effects  or  interactions  with the  environment.  For  real  world
+programs, one  have to deal  with computations  that have side  effects, handle
+exceptional behavior  using exceptions,  and get  information in  and out  of a
+program, ...
+
+With side effects  also come mutations. The OCaml  programming language offers,
+additionally to the functional style,  some imperative constructs that allow to
+easily  write  the  algorithms  that  happen  to  be  more  naturally  or  more
+efficiently implemented in an imperative style.
+
+
+@c .....................................
+
+@node OCTOBER 22 2018
+@subsection OCTOBER 22, 2018
+
+Welcome to  the final week  of this course  of functional programming  with the
+OCaml language!
+
+Up to now, we have explored most  of the core features of OCaml: writing simple
+expressions or higher order functions, manipulating complex data structures, or
+handling side effects and exceptions have  now become familiar to you. It's now
+time  to see  how to  structure your  OCaml code  when you  write longer,  more
+complex programs, and how to create  the data abstractions that are needed when
+programming in  the large: modules  are a  great language construct  that OCaml
+makesavailable just for  that, and we are  going to explore them  this week. We
+will also  survey some of the  OCaml tools, so that  you will be able  to write
+your first  real world OCaml projects,  outside of the exercise  environment in
+the web browser  that has accompanied us  all along the course And  as an added
+bonus, you  can watch these two  last guest videos from  companies and projects
+that found OCaml essential for their developments!
+
+Remember: next week we will unveil the final project!
+
+
+@c .....................................
+
+@node OCTOBER 29 2018
+@subsection OCTOBER 29, 2018
+
+Welcome to the final project: the time has  come to try your hands on some real
+programming task!
+
+To finish the course, we offer you a choice among two projects.
+
+@enumerate
+@item
+In the first, A Solver for Klotski,  you will write a generic solver for puzzle
+games,  and then  instanciate it  to solve  the game  of Klotski.  You will  be
+rewarded with an  animation of your solution! This project  uses vocabulary and
+concepts  that make  it  more suited  for computer  science  students.
+
+@item
+In the  second, Random Text  Generation, you will write  a program that  uses a
+Markov chain  approach (yes,  the same Markov  chains as in  the TV  series) to
+generate random  sentences that reuse  parts of an  input text corpus  (or even
+mixes  parts  of several  ones).   You  will be  rewarded  with  lots of  funny
+sentences!  This project  is a  bit easier  and has  less prerequisites.   Both
+projects can be done using the integrated  OCaml environment. So have a look at
+both texts and  choose the one you prefer!  You can also do both,  but it won't
+give you extra points.
+@end enumerate
+
+
+@c END SECTION News
+@c /////////////////////////////////////////////////////////////////////////////
+
+
+
+
+@c -----------------------------------------------------------------------------
+@c                          SECTION: Week 0
+
+@node Week 0 Introduction And Overview
+@section Week 0 Introduction And Overview
+@cindex week 0
+
+@heading About
+In this first part of the first week, we review some history and motivation for
+Functional  Programming,  learn  about  the OCaml  ecosystem  in  general,  and
+discover the available tools and resources.
+
+@cindex Xavier Leroy
+@subheading Greetings
+Greetings from Xavier Leroy.
+
+@subheading Introduction to the course
+This sequence  provides a general overview  of the course, its  motivation, and
+the overall structure of the different lectures.
+
+@cindex functional programming
+@subheading Functional Programming: history and motivation
+In  this  sequence,  we  review  some history  and  motivation  for  Functional
+Programming, and find out why there is so much excitement about the addition of
+so-called lambdas in many programming languages.
+
+@itemize
+@cindex Church-Turing thesis
+@cindex exercise
+@item
+Exercise: Church-Turing thesis
+@end itemize
+
+@cindex history of ocaml
+@subheading The OCaml language: history and key features
+In this sequence, we recall the  origins of the OCaml programming language, and
+pinpoint the key features of the language.
+
+@cindex ML family
+OCaml is  a member of  the ML family of  programming languages, that  provide a
+unique combination  of functional programming  with strong static  typing, type
+inference and algebraic data types.
+
+@subheading Why the OCaml language: meet the users
+In this  sequence, we  let the  users of the  OCaml programming  language speak
+up. We will hear voices from people participating in advanced research project,
+and enterprises developing world-class industrial  applications. It is a unique
+occasion to learn which features are important for them, and why.
+
+@cindex tools
+@subheading Tools and development environment: first steps in OCaml!
+In  this sequence,  we provide  an overview  of the  tools and  the development
+environment available  for OCaml.  Here we  introduce the  interactive exercise
+environment that you  will use during the  rest of the course,  and provide you
+with a guided tour of its features.
+
+Unlike most of the development  environment used in online course, state-of-the
+art technology developed around OCaml allows  us to provide an environment that
+runs fully  in your browser,  using the Javascript  engine of your  browser. No
+download is  needed, and  no remote  server is  hidden behind  your interactive
+development  environment! Notice  that you  need a  recent browser:  we suggest
+Chrome or Firefox, possibly the latest version.
+
+@itemize
+@cindex exercise
+@item
+Exercise: Grading environment (test-bed)
+@end itemize
+
+@subheading A brief showcase of some of OCaml's features
+In this  sequence, we offer a  preview of some  of the amazing features  of the
+OCaml programming language. Do not try  to fully understand the precise details
+of the code shown:  you will master them all by the end  of the course. What is
+important to get here  is the feeling of the power that  can be unleashed using
+OCaml.
+
+@cindex resources
+@subheading Overview of the available resources
+In this sequence, we will briefly  review the main available resources that are
+relevant  for taking  full advantage  of the  course. You  will also  find here
+pointers for reaching out to the great OCaml community.
+
+
+
+
+
+
+@c ----------------------------------------------------------------------------
+@c                          SECTION: Week 1
+
+@node Week 1 Basic Types Definitions And Functions
+@section Week 1: Basic Types, Definitions And Functions
+@cindex week1
+@cindex basic types
+@cindex definitions
+@cindex functions
+
+@heading About
+In this second  part of the first  week, we learn the basic  features needed to
+write our first functions.
+
+@heading Tezos (video)
+Tezos
+
+
+@c .....................................
+
+@node Basic Data Types
+@subsection Basic Data Types
+@cindex basic data types
+@cindex data types, basic
+
+@heading About
+This sequence introduces  two important primitive types of  OCaml: integers and
+booleans.
+
+
+@c .....................................
+
+@node More Data Types
+@subsection More Data Types
+@cindex data types, more
+@cindex primitive types
+@cindex floats
+@cindex characters
+@cindex strings
+@cindex conversion functions between types
+
+@heading About
+In this  sequence we introduce  some more primitive types:  floats, characters,
+and strings. We also talk about conversion functions between different types.
+
+
+@c .....................................
+
+@node Expressions
+@subsection Expressions
+@cindex expressions
+
+@heading About
+Expressions  compute   values,  they   play  a   central  role   in  functional
+programming.  This  sequence shows  some  basic  constructions of  expressions:
+conditionals  and  function   application.  We  also  show   some  examples  of
+polymorphic operators.
+
+
+@c .....................................
+
+@node Definitions
+@subsection Definitions
+@cindex definitions
+@cindex identifiers
+@cindex bind values
+@cindex local vs global definitions
+@cindex simultaneous definitions
+
+@heading About
+Definitions  introduce names  of identifiers,  and  bind values  to them.  This
+sequence  explains the  two forms  of definitions  in OCaml,  namely local  and
+global definitions, and shows why simultaneous definitions are useful.
+
+
+@c .....................................
+
+@node Functions
+@subsection Functions
+@cindex functions
+@cindex function definitions
+@cindex definition of functions
+@cindex lexical scoping
+
+@heading About
+In functional  programming, functions are the  basic means to structure  and to
+generalize  code.  This  sequence  shows   some  simple  examples  of  function
+definitions  in OCaml.  We also  discuss the  fundamental principle  of lexical
+scoping, and  demonstrate that identifiers  are not  variables in the  sense of
+imperative programming.
+
+
+@c .....................................
+
+@node Recursion
+@subsection Recursion
+
+@heading About
+This sequence  explains how  to define  in OCaml  recursive functions,  that is
+functions that in their definition call themselves.
+
+
+
+
+@c -----------------------------------------------------------------------------
+@c                        SECTION: Week 2
+
+@node Week 2 Basic Data Structures
+@section Week 2: Basic Data Structures
+@cindex week 2
+@cindex basic data structures
+@cindex data structures, basic
+
+
+
+
+@c -----------------------------------------------------------------------------
+@c                         SECTION: Week 3
+
+@node Week 3 More Advanced Data Structures
+@section Week: More Advanced Data Structures
+@cindex week 4
+@cindex advanced data structures
+@cindex data structures, advanced
+
+
+
+
+@c -----------------------------------------------------------------------------
+@c                         SECTION: Week 4
+
+@node Week 4 Higher Order Functions
+@section Week 4: Higher Order Functions
+@cindex week 4
+@cindex higher order functions
+@cindex functions, higher order
+
+
+
+
+@c -----------------------------------------------------------------------------
+@c                         SECTION: Week 5
+
+@node Week 5 Exceptions Input/Output And Imperative Constructs
+@section Week 5 Exceptions, Input/Output And Imperative Constructs
+@cindex week 5
+@cindex exceptions
+@cindex input/output
+@cindex io
+@cindex imperative constructs
+
+
+
+
+@c -----------------------------------------------------------------------------
+@c                         SECTION: Week 6
+
+@node Week 6 Modules And Data Abstraction
+@section Modules And Data Abstraction
+@cindex week 6
+@cindex modules
+@cindex data abstraction, modules
+
+
+
+
+@c -----------------------------------------------------------------------------
+@c                         SECTION: Week 7
+
+@node Week 7 Project
+@section Week 7: Project
+@cindex project
+
+
+
+
+
+@c END CHAPTER OcamlMOOC
+@c /////////////////////////////////////////////////////////////////////////////
+
+
 @c END CHAPTERS
 @c /////////////////////////////////////////////////////////////////////////////
 
@@ -1546,7 +2156,10 @@ $(FILE).info : $(FILE).texi
 	@printf "${GREEN}done${CLEAR}\n"
 openinfo : INFO
 	@printf "${YELLOW}Opening INFO in Emacs...${CLEAR}\n"
-	@emacsclient -s server --eval '(info "($(ROOT)/$(FILE).info)top")'
+	@emacsclient -s server --eval \
+	    '(progn \
+	        (info "$(ROOT)/$(FILE).info") \
+	        (revert-buffer t t))'
 	@printf "${GREEN}done${CLEAR}\n"
 
 
