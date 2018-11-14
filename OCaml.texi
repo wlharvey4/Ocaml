@@ -5,8 +5,8 @@
 \input texinfo   @c -*- mode: texinfo -*-
 
 @c FILE    OCaml.twjr
-@c VERSION 0.0.2
-@c DATE    2018-11-11T23:55
+@c VERSION 0.0.3
+@c DATE    2018-11-13T22:00
 @c AUTHOR  wlharvey4
 
 @c *****************************************************************************
@@ -233,15 +233,14 @@
 @end ifnottex
 
 
-@c <------------------------------------->
-@c The initial_setup code runs as a script
-@c in a  BEGIN section  of AWK  during the
-@c tangling  phase  before any  files  are
-@c extracted.   Here  create  a  directory
-@c structure for  project files,  plus any
-@c other initialization that might need to
-@c be   done.    Files  are   moved   into
-@c directories in a @post_create command.
+@c -----------------------------------------------------------------------------
+@c INITIAL_SETUP
+@c -----------------------------------------------------------------------------
+
+@c The initial_setup code runs as a script in a BEGIN section of AWK during the
+@c tangling  phase before  any files  are  extracted. Here  create a  directory
+@c structure for project  files, plus any other initialization  that might need
+@c to be done. Files are moved into directories in a @post_create command.
 
 @c <------------------------------------->
 
@@ -503,6 +502,10 @@ Preface
 * Overview::                    An overview of the @value{DOCUMENT}.
 * Conventions::                 Typographical conventions.
 
+What Is Covered
+
+* The Readme::
+
 OCaml Sites
 
 * Home Site OCaml.org::
@@ -547,6 +550,9 @@ Code Chunk Summaries
 @c <------------------------------------->
 
 
+@c -----------------------------------------------------------------------------
+
+
 @c END Menus and Contents
 @c /////////////////////////////////////////////////////////////////////////////
 
@@ -556,10 +562,16 @@ Code Chunk Summaries
 
 
 
-@c %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+@c <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 @part Front Matter
+@c <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 
+
+
+
+
+
+@c %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 @c BEGIN FRONT-MATTER
 @c --Forward
 @c --Preface
@@ -727,9 +739,80 @@ enjoy.  Cheers.
 Overview text and chapter by chapter description here.
 
 
+@c .....................................
+
+@menu
+* The Readme::
+@end menu
+
+@node The Readme,  , Overview, Overview
+@unnumberedsubsec The Readme
+@cindex readme
+
+@need 400
+@anchor{README-md}
+@cdindex @r{@{@file{README.md}@}}, definition
+@noindent
+@r{@{@file{README.md}@}} @equiv{}
+@example
+# MY TWJR TEMPLATE
+
+## About This Source File
+
+This  document (`my_template.twjr`)  is  a *literate*  source  document. It  is
+designed to produce an `Info` file (best read from within Emacs, but there is a
+stand-alone Info  reader that can  be used),  a `Pdf` document  (generated from
+LaTeX source  code by PDFTeX),  an `HTML` web  site, `Docbook` source  code, an
+`XML`  document, and  a  plain text  document. In  addition.  it also  produces
+working  code   in  any  language  (so   long  as  your  system   contains  the
+infrastructure to  run the code). For  example, this `README` file  was drafted
+within this source document  and extracted as a separate file,  as was also the
+`Makefile`.  This *literate*  document's  features are  targeted  via a  custom
+`Makefile` that is  also a part of  this document, and extracted  as a separate
+file, and is dynamic in the sense that  if you update it, you can produce a new
+version with  a simple call to  a `make` target. It  is designed to be  able to
+produce any  number of working software  packages of any language  contained at
+any  number of  different  locations on  your  system, all  with  a single  or,
+alternatively, multiple `make` calls, depending on the granularity you need.
+
+The Github  repository contains this  source document,  a Makefile that  can be
+used  to work  with the  project, as  well as  a `Texinfo`  file that  has been
+generated from  this `Twjr` file,  this README,  and a `.gitignore`  file. Most
+computer systems have or can easily get the `make`, and `texinfo` programs that
+are needed to  process the `Texinfo` file into the  various end documents, such
+as `Info`,  `Pdf`, `HTML`, etc. Your  system will need, in  addition to `make`,
+and `texinfo`, Gnu  AWK (`gawk`), and TexiwebJr to make  changes to this source
+document and  process it  into a  `Texinfo` file and  extract its  programs and
+files.  Your system  should also  have  the equivalent  of Bash  version 4,  as
+version 4  has some parameter capabilities  that earlier versions do  not. Note
+that most  versions of Mac OS  have version 3  of Bash installed as  a default.
+Version 4 can be added using Homebrew or MacPorts very easily. In the past, Mac
+OS has  also shipped with a  version of `texinfo`  that is below 6.5.  You will
+also need to update `texinfo` to at least 6.5 if that is the case.
+
+## How It Works
+
+## Resources
+
+* [TexiwebJr](https://github.com/arnoldrobbins/texiwebjr)
+* [Texinfo](https://www.gnu.org/software/texinfo/)
+* [Gnu AWK (gawk)](https://www.gnu.org/software/gawk/)
+* [Gnu Bash](https://www.gnu.org/software/bash/)
+* [TeX Live](https://www.tug.org/texlive/)
+
+@end example
+@iftex
+@smallfonts @rm
+@end iftex
+@iftex
+@textfonts @rm
+@end iftex
+
+
 
 
 @c -----------------------------------------------------------------------------
+
 @node Conventions,  , Overview, Preface
 @unnumberedsec Typographical Conventions
 
@@ -806,7 +889,7 @@ in this sentence.  Finally, file names are indicated like this:
 
 
 @c *****************************************************************************
-@c                              INTRODUCTION
+@c                          CHAPTER: Introduction
 
 @node Introduction, OCaml Sites, Preface, Top
 @chapter Introduction
@@ -834,9 +917,6 @@ in this sentence.  Finally, file names are indicated like this:
 
 @node OCaml Sites, The Makefile, Introduction, Top
 @chapter OCaml Sites
-
-
-
 
 
 
@@ -907,11 +987,6 @@ Ocaml 4.07.1 was released on 2018-10-04.
 @subheading All Earlier Releases
 
 @url{https://ocaml.org/releases/, All Releases Here}
-
-
-
-
-
 
 
 
@@ -1164,10 +1239,6 @@ checksums.
 
 
 
-
-
-
-
 @c END Chapter First
 @c /////////////////////////////////////////////////////////////////////////////
 
@@ -1243,6 +1314,10 @@ The TWJR Targets
 @command{twjrkeep dirclean}
 @item jrtangle
 @command{jrtangle $(FILE).twjr}
+@item jrweave
+@command{jrweave $(FILE).twjr > $(FILE).texi}
+@item dist
+@command{jrtangle $(FILE).twjr jrweave $(FILE).twjr > $(FILE).texi distclean}
 @item newmakefile
 @command{jrtangle allclean}
 @end table
@@ -1301,7 +1376,7 @@ The following table lists called chunk definition points.
 @item @r{<@i{Makefile---Applications}>} @tab See @ref{Makefile---Applications}.
 @item @r{<@i{Makefile---Clean Targets}>} @tab See @ref{Makefile---Clean-Targets}.
 @item @r{<@i{Makefile---Default Target}>} @tab See @ref{Makefile---Default-Target}.
-@item @r{<@i{Makefile---TWJR Targets}>} @tab See @ref{Makefile---TWJR-Targets}.
+@item @r{<@i{Makefile---TWJR Targets}>} @tab See @ref{Makefile---TWJR-Targets-1}.
 @item @r{<@i{Makefile---Variable Definitions}>} @tab See @ref{Makefile---Variable-Definitions}.
 @end multitable
 @iftex
@@ -1354,6 +1429,8 @@ not be changed or otherwise touched (pun intended).
 # VARIABLE DEFINITIONS
 ######################
 LODESTONE := .lodestone
+README    := README.md
+GIT       := .git*
 
 SHELL := $$(which bash)
 
@@ -1497,7 +1574,7 @@ target; therefore,  use the target  @command{make newmakefile} first,  then run
 any desired target.
 
 @need 400
-@anchor{Makefile---TWJR-Targets}
+@anchor{Makefile---TWJR-Targets-1}
 @cdindex @r{<@i{Makefile---TWJR Targets}>}, definition
 @noindent
 @r{<@i{Makefile---TWJR Targets}>} @equiv{}
@@ -1505,32 +1582,79 @@ any desired target.
 # TWJR TARGETS
 ##############
 
+# <------------------------------------->
+#               twjrkeep
+
+
 # Process everything; don't remove any build or log files;
+
 twjrkeep : jrtangle jrweave info pdf html
 
+
+# <------------------------------------->
+#                 TWJR
+#                DEFAULT
+
 # Process everything; remove build files and logs.
+
 TWJR : twjr
 twjr : twjrkeep dirclean
+
+
+# <------------------------------------->
+#               JRTANGLE
 
 # JRTANGLE depends upon the LODESTONE and the ROOT/FILES directory;
 # if either is missing or out of date, then JRTANGLE will be run to
 # extract its files.
+
 JRTANGLE : TANGLE
 TANGLE   : jrtangle
 jrtangle : tangle
 tangle   : files $(LODESTONE)
 
+@end example
+@iftex
+@smallfonts @rm
+@end iftex
+
+@noindent
+This chunk is also defined in
+@ref{Makefile---TWJR-Targets-2}.
+
+@noindent
+This chunk is called by @r{@{@file{Makefile}@}}; see its first definition at @ref{Makefile}.
+@iftex
+@textfonts @rm
+@end iftex
+
+@anchor{LODESTONE}
+@need 400
+@anchor{Makefile---TWJR-Targets-2}
+@cdindex @r{<@i{Makefile---TWJR Targets}>}, definition
+@noindent
+@r{<@i{Makefile---TWJR Targets}>} +@equiv{}
+@example
+# <------------------------------------->
+#               LODESTONE
+
 # Checks the relative time to determine if JRTANGLE should be rerun
+
 $(LODESTONE) : $(FILE).twjr
     @@printf "$@{YELLOW@}Tangling $(FILE)...$@{CLEAR@}\n"
     @@jrtangle $(FILE).twjr
     @@touch $(LODESTONE)
     @@printf "$@{GREEN@}done tangling.$@{CLEAR@}\n"
 
+
+# <------------------------------------->
+#                files
+
 # Checks for  the existence  of the ROOT/FILES  directory; extracts  files into
 # them if they don't  exist or are out of date; they must  be retouched if they
 # exist but  are out of date  because they will  not be remade or  updated when
 # files are extracted into them
+
 files : $(ROOT)/$(FILES)
 $(ROOT)/$(FILES) : $(FILE).twjr
     @@printf "$@{YELLOW@}Creating files...$@{CLEAR@}\n"
@@ -1539,12 +1663,22 @@ $(ROOT)/$(FILES) : $(FILE).twjr
     @@touch $(ROOT)/$(FILES)
     @@printf "$@{GREEN@}done creating files.$@{CLEAR@}\n"
 
+
+# <------------------------------------->
+#              newmakefile
+
 # Extracts the Makefile if necessary by tangling; everything else
 # is thereafter deleted
+
 newmakefile : $(LODESTONE) allclean
+
+
+# <------------------------------------->
+#              JRWEAVE
 
 # Extracts the TEXI, and updates the nodes and sections with a batch call to
 # Emacs; it depends upon TWJR
+
 JRWEAVE : WEAVE
 WEAVE   : TEXI
 TEXI    : jrweave
@@ -1560,8 +1694,20 @@ $(FILE).texi : $(FILE).twjr
       (texinfo-master-menu 1) (save-buffer 0))' 2> batch.log
     @@printf "$@{GREEN@}done updating.$@{CLEAR@}\n"
 
+# <------------------------------------->
+#                DIST
+
+DIST : dist
+dist : jrtangle jrweave distclean
+
+
+# <------------------------------------->
+#                 INFO
+#               OPENINFO
+
 # Runs makeinfo on the TEXI file;
 # Opens the INFO file in Emacs
+
 INFO : info
 info : $(FILE).info
 $(FILE).info : $(FILE).texi
@@ -1573,8 +1719,14 @@ openinfo : INFO
     @@emacsclient -s server --eval '(info "($(ROOT)/$(FILE).info)top")'
     @@printf "$@{GREEN@}done$@{CLEAR@}\n"
 
+
+# <------------------------------------->
+#                  PDF
+#                OPENPDF
+
 # Runs pdftexi2dvi on the TEXI file;
 # Opens the PDF file
+
 PDF : pdf
 pdf : $(FILE).pdf
 $(FILE).pdf : $(FILE).texi
@@ -1586,8 +1738,14 @@ openpdf : PDF
     @@open $(FILE).pdf
     @@printf "$@{GREEN@}done$@{CLEAR@}\n"
 
+
+# <------------------------------------->
+#                 HTML
+#               OPENHTML
+
 # Runs makeinfo --html on the TEXI file;
 # Opens index.html in a browser
+
 HTML : html
 html : $(FILE)/index.html
 $(FILE)/index.html : $(FILE).texi
@@ -1603,6 +1761,10 @@ openhtml : HTML
 @iftex
 @smallfonts @rm
 @end iftex
+
+@noindent
+This chunk is also defined in
+@ref{Makefile---TWJR-Targets-1}.
 
 @noindent
 This chunk is called by @r{@{@file{Makefile}@}}; see its first definition at @ref{Makefile}.
@@ -1634,35 +1796,60 @@ except the @acronym{TWJR} file and the @file{Makefile}.
 @noindent
 @r{<@i{Makefile---Clean Targets}>} @equiv{}
 @example
-.PHONY : clean dirclean distclean worldclean allclean
+# CLEAN TARGETS
+################
+.PHONY : clean dirclean distclean allclean
+
+# <------------------------------------->
+#                clean
 
 # remove backup files
+
 clean :
     @@printf "$@{WHITEBOLD@}Cleaning...$@{CYAN@}\n"
     @@rm -f *~ .*~ #*#
     @@printf "$@{GREEN@}done cleaning.$@{CLEAR@}\n"
 
-# after clean: remove all build and miscellaneous files, leaving only
-# TWJR, TEXI, INFO, HTML, PDF, Makefile & the source documents.
+
+# <------------------------------------->
+#               dirclean
+
+# after clean:  remove all  build and miscellaneous  files, leaving  only TWJR,
+# TEXI,  INFO, HTML,  PDF,  Makefile,  README, .git,  .gitignore  & the  source
+# documents.
+
 dirclean : clean
     @@printf "$@{WHITEBOLD@}Dir-cleaning...$@{CYAN@}\n"
-    @@for file in *; do         \
+    @@for file in * .*; do      \
       case $$file in           \
+            '.' | '..')          ;;\
         $(FILE)* | Makefile) ;;\
         $(FILES)*)       ;;\
         $(LODESTONE))        ;;\
+        $(README))       ;;\
+        $(GIT))      ;;\
         *) rm -vfr $$file    ;;\
       esac                     \
     done
     @@printf "$@{GREEN@}done dir-cleaning.$@{CLEAR@}\n"
 
+
+# <------------------------------------->
+#                distclean
+
 # after dirclean: remove INFO, HTML, and PDF, and FILES
+
 distclean : dirclean
     @@printf "$@{WHITEBOLD@}Dist-cleaning...$@{CYAN@}\n"
     @@rm -vfr $(FILE) $(FILE).info $(FILE).pdf $(ROOT)/$(FILES)
     @@printf "$@{GREEN@}done dist-cleaning.$@{CLEAR@}\n"
 
+
+# <------------------------------------->
+#                allclean
+
 # allclean: remove TEXI, leaving only TWJR and Makefile
+
 allclean : distclean
     @@printf "$@{WHITEBOLD@}Cleaning all...$@{CYAN@}\n"
     @@rm -vfr $(FILE).texi
@@ -1699,6 +1886,10 @@ fundamental feature of literate programming.
 @noindent
 @r{<@i{Makefile---Applications}>} @equiv{}
 @example
+# APPLICATION TARGETS
+######################
+
+# <Makefile---Applications--Hook>
 
 @end example
 @iftex
@@ -1748,6 +1939,9 @@ and the code chunk references.
 @item @r{@{@file{Makefile}@}}
 This chunk is defined in
 @ref{Makefile}.
+@item @r{@{@file{README.md}@}}
+This chunk is defined in
+@ref{README-md}.
 @end table
 
 
@@ -1768,8 +1962,11 @@ This chunk is defined in
 This chunk is defined in
 @ref{Makefile---Default-Target}.
 @item @r{<@i{Makefile---TWJR Targets}>}
-This chunk is defined in
-@ref{Makefile---TWJR-Targets}.
+Multiple definitions occur in
+@ref{Makefile---TWJR-Targets-1},
+and
+@ref{Makefile---TWJR-Targets-2}.
+
 @item @r{<@i{Makefile---Variable Definitions}>}
 This chunk is defined in
 @ref{Makefile---Variable-Definitions}.
